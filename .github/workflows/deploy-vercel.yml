@@ -1,12 +1,11 @@
-name: "Deploy Vercel"
+name: Deploy Vercel
 
 on:
-  release:
-    types:
-      - published
-  push:
-     branches: [ $default-branch ]
   workflow_dispatch:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
 
 jobs:
   build:
