@@ -1,0 +1,64 @@
+<div align="center">
+  <img src="./public/icons/icon96.png" alt="logo">
+
+  <h1>Janapc</h1>
+  <p align="center">
+  <a href="#description-writing_hand">Description</a> &#8226
+  <a href="#installation-package">Installation</a> &#8226
+  <a href="#technologies-gear">Technologies</a>
+&#8226
+  <a href="#license-page_facing_up">License</a>
+</p>
+</div>
+
+## Description :writing_hand: :
+
+This project is my portfolio, constructed in Nextjs. My objective was to create a site dynamic, responsive, and fast loading. I made the deployment by Vercel, take a look at the site here:
+
+---
+
+## Installation :package: :
+
+```sh
+## install dependences
+$ npm i
+
+## run in development
+$ npm run dev
+
+## run tests unit
+$ npm run test:unit
+
+## run tests e2e(run server before)
+$ npm run test:e2e
+
+## run in production
+$ npm run build
+$ npm run start
+```
+
+This application run in port **3000**.
+
+---
+
+## Technologies :gear: :
+
+- styled-component
+- Nextjs
+- Reactjs
+- Typescript
+- Jest
+- Cypress
+- PWA
+
+---
+
+## License :page_facing_up: :
+
+This project is MIT licensed, as found in the [LICENSE]('./LICENSE') file.
+
+---
+
+<br>
+
+Made by Janapc 🤘 [Get in touch!](https://www.linkedin.com/in/janaina-pedrina/)
