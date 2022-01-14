@@ -12,7 +12,7 @@ on:
 jobs:
   vercel: 
     runs-on: ubuntu-latest
-    name: "Deploy vercel"
+    name: "Deploy"
 
     steps:
       - uses: actions/checkout@v2
