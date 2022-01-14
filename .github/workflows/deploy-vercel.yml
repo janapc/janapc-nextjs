@@ -10,26 +10,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  vercel: 
+  deploy:
     runs-on: ubuntu-latest
-    name: "Deploy"
-
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: ngduc/vercel-deploy-action@master
         with:
-          node-version: '14'
-          registry-url: https://registry.npmjs.org/
-
-      - name: "Deploy to Vercel"
-        run: |
-          prodRun=""
-          if [[ ${GITHUB_REF} == "refs/heads/master" ]]; then
-            prodRun="--prod"
-          fi
-
-          npx vercel --token ${VERCEL_TOKEN} $prodRun
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-cli: vercel # optional ("vercel" or "now")
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+          vercel-args: '--prod' #Optional
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}  #Required
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required 
+          working-directory: .
