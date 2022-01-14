@@ -5,8 +5,7 @@ on:
     types:
       - published
   push:
-    branches:
-      - master
+     branches: [ $default-branch ]
   workflow_dispatch:
 
 jobs:
@@ -14,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ngduc/vercel-deploy-action@master
+      - uses: amondnet/vercel-action@v19
         with:
           vercel-cli: vercel # optional ("vercel" or "now")
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
