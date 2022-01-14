@@ -1,0 +1,26 @@
+name: Janapc e2e testing
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
+jobs:
+  cypress:
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v2 
+      - run: npm install
+
+      - name: Run tests
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
+          start: npm run dev
+          wait-on: http://localhost:3000

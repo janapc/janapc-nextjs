@@ -2,13 +2,18 @@
   <img src="./public/icons/icon96.png" alt="logo">
 
   <h1>Janapc</h1>
-  <p align="center">
+    <img alt="Last commit" src="https://img.shields.io/github/last-commit/janapc/janapc-nextjs"/>
+  <img alt="Language top" src="https://img.shields.io/github/languages/top/janapc/janapc-nextjs"/>
+  <img alt="Repo size" src="https://img.shields.io/github/repo-size/janapc/janapc-nextjs"/>
+  <img alt="License" src="https://img.shields.io/github/license/janapc/janapc-nextjs"/>
+   <img alt="CI Janapc e2e" src="https://github.com/janapc/janapc-nextjs/actions/workflows/janapc-test-e2e.yml/badge.svg"/>
+  <img alt="CI Janapc Unit" src="https://github.com/janapc/janapc-nextjs/actions/workflows/janapc-test-unit.yml/badge.svg"/>
+</p>
   <a href="#description-writing_hand">Description</a> &#8226
   <a href="#installation-package">Installation</a> &#8226
   <a href="#technologies-gear">Technologies</a>
 &#8226
   <a href="#license-page_facing_up">License</a>
-</p>
 </div>
 
 ## Description :writing_hand: :
