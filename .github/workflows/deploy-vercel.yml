@@ -8,7 +8,7 @@ on:
     branches: [ $default-branch ]
 
 jobs:
- jest:
+  jest:
     runs-on: ubuntu-latest
 
     strategy:
@@ -40,6 +40,7 @@ jobs:
           headless: true
           start: npm run dev
           wait-on: http://localhost:3000
+
   vercel:
     needs: cypress
     runs-on: ubuntu-latest
