@@ -6,8 +6,8 @@
   <img alt="Language top" src="https://img.shields.io/github/languages/top/janapc/janapc-nextjs"/>
   <img alt="Repo size" src="https://img.shields.io/github/repo-size/janapc/janapc-nextjs"/>
   <img alt="License" src="https://img.shields.io/github/license/janapc/janapc-nextjs"/>
-   <img alt="CI Janapc e2e" src="https://github.com/janapc/janapc-nextjs/actions/workflows/janapc-test-e2e.yml/badge.svg"/>
-  <img alt="CI Janapc Unit" src="https://github.com/janapc/janapc-nextjs/actions/workflows/janapc-test-unit.yml/badge.svg"/>
+   <img alt="CI Janapc e2e" src="https://github.com/janapc/janapc-nextjs/actions/workflows/tests-e2e.yml/badge.svg"/>
+  <img alt="CI Janapc Unit" src="https://github.com/janapc/janapc-nextjs/actions/workflows/tests-unit.yml/badge.svg"/>
   <img alt="CI Deploy Vercel" src="https://github.com/janapc/janapc-nextjs/actions/workflows/deploy-vercel.yml/badge.svg"/>
 </p>
   <a href="#description-writing_hand">Description</a> &#8226
