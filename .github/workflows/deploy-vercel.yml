@@ -9,16 +9,14 @@ jobs:
   test-jest:
     name: tests unit
     runs-on: ubuntu-latest
-    environment: prod
     steps:
-      - uses: ./.github/workflows/tests-unit.yml
+      - uses: janapc/janapc-nextjs/.github/workflows/tests-unit.yml@master
       
   test-cypress:
     name: tests e2e
     runs-on: ubuntu-latest
-    environment: prod
     steps:
-      - uses: ./.github/workflows/tests-e2e.yml
+      - uses: . janapc/janapc-nextjs/.github/workflows/tests-e2e.yml@master
 
   deploy-production:
     needs: [test-jest, test-cypress]
