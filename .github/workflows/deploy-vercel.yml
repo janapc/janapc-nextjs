@@ -1,48 +1,19 @@
 name: Deploy Vercel
 
-on:
-  workflow_dispatch:
-  push:
-    branches: [ $default-branch ]
-  pull_request:
-    branches: [ $default-branch ]
+on: workflow_dispatch:
 
 jobs:
   jest:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [13.x]
-
+    name: tests unit
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-      - uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm run test:unit --if-present
-
+      - uses: ./.github/workflows/janapc-test-unit.yml
   cypress:
-    needs: jest
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-
+    name: tests e2e
     steps:
-      - uses: actions/checkout@v2 
-      - run: npm install
-
-      - name: Run tests
-      - uses: cypress-io/github-action@v2
-        with:
-          browser: chrome
-          headless: true
-          start: npm run dev
-          wait-on: http://localhost:3000
+      - uses: ./.github/workflows/janapc-test-e2e.yml
 
   vercel:
-    needs: cypress
+    needs: [jest, cypress]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2     
