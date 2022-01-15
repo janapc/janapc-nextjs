@@ -1,23 +1,20 @@
-name: Janapc e2e testing
+name: Tests E2E
 
 on:
   workflow_dispatch:
   push:
     branches: [ $default-branch ]
-  pull_request:
-    branches: [ $default-branch ]
 
 jobs:
-  cypress:
-
+  cypress-run:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-
+    
+    name: Tests E2E on Chrome
     steps:
-      - uses: actions/checkout@v2 
+      - uses: actions/checkout@v2
       - run: npm install
-
-      - name: Run tests
+      
       - uses: cypress-io/github-action@v2
         with:
           browser: chrome
