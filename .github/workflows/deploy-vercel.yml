@@ -16,7 +16,7 @@ jobs:
     name: tests e2e
     runs-on: ubuntu-latest
     steps:
-      - uses: . janapc/janapc-nextjs/.github/workflows/tests-e2e.yml@master
+      - uses: janapc/janapc-nextjs/.github/workflows/tests-e2e.yml@master
 
   deploy-production:
     needs: [test-jest, test-cypress]
