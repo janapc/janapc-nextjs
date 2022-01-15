@@ -68,6 +68,7 @@ describe('Contact', () => {
     cy.url().should('include', '/contact');
 
     cy.get('[data-testid="link-"]').click();
+    cy.wait(500);
     cy.url().should('include', '/');
   });
 
@@ -177,6 +178,7 @@ describe('Contact', () => {
 
     cy.get('[data-testid="btn-menu"]').click();
     cy.get('[data-testid="link-"]').click();
+    cy.wait(500);
     cy.url().should('include', '/');
   });
 });

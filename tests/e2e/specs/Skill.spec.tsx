@@ -52,6 +52,7 @@ describe('Skill', () => {
     cy.get('body').should('have.css', 'background-color', 'rgb(32, 29, 30)');
 
     cy.get('[data-testid="link-projects"]').click();
+    cy.wait(500);
     cy.url().should('includes', '/projects');
   });
 
@@ -145,6 +146,8 @@ describe('Skill', () => {
 
     cy.get('[data-testid="btn-menu"]').click();
     cy.get('[data-testid="link-projects"]').click();
+    
+    cy.wait(500);
     cy.url().should('include', '/projects');
   });
 });

@@ -56,6 +56,7 @@ describe('About', () => {
     cy.url().should('include', '/about');
 
     cy.get('[data-testid="link-jobs"]').click();
+    cy.wait(500);
     cy.url().should('include', '/jobs');
   });
 
@@ -128,5 +129,18 @@ describe('About', () => {
     cy.get('[data-testid="btn-menu"]').click();
     cy.get('[data-testid="mobile-menu"').should('have.css', 'display', 'block');
     cy.get('[data-testid="btn-close-mobile-menu"]').click();
+  });
+
+  it('Should view page to mobile and navigate to the jobs page', () => {
+    cy.visit('http://localhost:3000/about');
+
+    cy.url().should('include', '/about');
+    cy.viewport('iphone-6');
+
+    cy.get('[data-testid="btn-menu"]').click();
+    cy.get('[data-testid="link-jobs"]').click();
+    
+    cy.wait(500);
+    cy.url().should('include', '/jobs');
   });
 });

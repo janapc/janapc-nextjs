@@ -56,6 +56,7 @@ describe('Home', () => {
     cy.url().should('include', '/');
 
     cy.get('[data-testid="link-about"]').click();
+    cy.wait(500);
     cy.url().should('include', '/about');
   });
 
@@ -146,6 +147,8 @@ describe('Home', () => {
 
     cy.get('[data-testid="btn-menu"]').click();
     cy.get('[data-testid="link-about"]').click();
+    
+    cy.wait(500);
     cy.url().should('include', '/about');
   });
 });

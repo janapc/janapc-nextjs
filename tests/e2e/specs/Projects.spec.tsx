@@ -80,6 +80,7 @@ describe('Projects', () => {
     cy.get('body').should('have.css', 'background-color', 'rgb(32, 29, 30)');
 
     cy.get('[data-testid="link-contact"]').click();
+    cy.wait(1000);
     cy.url().should('includes', '/contact');
   });
 
@@ -201,6 +202,8 @@ describe('Projects', () => {
 
     cy.get('[data-testid="btn-menu"]').click();
     cy.get('[data-testid="link-contact"]').click();
+    
+    cy.wait(500);
     cy.url().should('include', '/contact');
   });
 });
