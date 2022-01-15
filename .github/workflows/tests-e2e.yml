@@ -1,4 +1,4 @@
-name: Test E2E
+name: Tests E2E
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     
-    name: E2E on Chrome
+    name: Tests E2E on Chrome
     steps:
       - uses: actions/checkout@v2
       - run: npm install
