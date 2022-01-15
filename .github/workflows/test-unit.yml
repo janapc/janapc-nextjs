@@ -1,0 +1,20 @@
+name: Test Unit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ $default-branch ]
+
+jobs:
+  jest:
+    runs-on: ubuntu-latest
+    name: Test unit jest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'npm'
+      - run: npm install
+      - run: npm run test:unit --if-present
