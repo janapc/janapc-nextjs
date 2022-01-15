@@ -1,4 +1,4 @@
-name: Test Unit
+name: Tests Unit
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
 jobs:
   jest:
     runs-on: ubuntu-latest
-    name: Test unit jest
+    name: Tests unit with jest
     
     steps:
       - uses: actions/checkout@v2
