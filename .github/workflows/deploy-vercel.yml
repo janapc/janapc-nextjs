@@ -9,14 +9,31 @@ jobs:
   test-jest:
     name: tests unit
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: janapc/janapc-nextjs/.github/workflows/tests-unit.yml@master
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'npm'
+      - run: npm install
+      - run: npm run test:unit --if-present
       
   test-cypress:
     name: tests e2e
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
     steps:
-      - uses: janapc/janapc-nextjs/.github/workflows/tests-e2e.yml@master
+      - uses: actions/checkout@v2
+      - run: npm install
+      
+      - uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
+          start: npm run dev
+          wait-on: http://localhost:3000
 
   deploy-production:
     needs: [test-jest, test-cypress]
