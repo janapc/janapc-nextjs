@@ -19,7 +19,7 @@
 
 ## Description :writing_hand: :
 
-This project is my portfolio, constructed in Nextjs. My objective was to create a site dynamic, responsive, and fast loading. I made the deployment by Vercel, take a look at the site here: [Janapc](https://janapc-nextjs.vercel.app/)
+This project is my portfolio, constructed in Nextjs. My objective was to create a site dynamic, responsive, and fast loading.
 
 ---
 
